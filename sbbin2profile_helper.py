@@ -16,7 +16,11 @@ filter_dic = {
 '0xc':'socket-type',
 '0xd':'socket-protocol',
 '0xe':'target',
+<<<<<<< HEAD
 '0xf':'fsctl-command',
+=======
+'0xf':'fsctl-command'
+>>>>>>> 2fba56946526d44da3d34a5a820896f7e34d0f6d
 '0x11':'iokit-user-client-class',
 '0x12':'iokit-property',
 '0x13':'iokit-connection',
@@ -35,8 +39,13 @@ filter_dic = {
 '0x22':'info-type',
 '0x23':'notification-name',
 '0x24':'notification-payload',
+<<<<<<< HEAD
 '0x26':'sysctl-name',
 '0x27':'process-name',
+=======
+'0x26':'sysctl-name'
+'0x27':'process-name'
+>>>>>>> 2fba56946526d44da3d34a5a820896f7e34d0f6d
 '0x81':'regex',
 '0x82':'mount-relative-regex',
 '0x83':'xattr-regex',
@@ -107,7 +116,11 @@ def getfilterStr(f,offset,regex_table_offset):
 
 
     elif filter == 0x0b or filter == 0x0c or filter == 0x0d:
+<<<<<<< HEAD
         filterStr += '\t'+filter_dic[str(hex(filter))]
+=======
+        filterStr += '\t'+filter_dic[filter]
+>>>>>>> 2fba56946526d44da3d34a5a820896f7e34d0f6d
         f.seek(offset *8 + 2)
         domaintype = struct.unpack('<H',f.read(2))[0]
         socketfilterStr = ''
@@ -119,7 +132,11 @@ def getfilterStr(f,offset,regex_table_offset):
         else:
             socketfilterStr = 'unknown domain type'
         """
+<<<<<<< HEAD
         filterStr =filterStr + "   " +str(hex(domaintype))+')\n'
+=======
+        filterStr =filterStr + "   " +domaintype+')\n'
+>>>>>>> 2fba56946526d44da3d34a5a820896f7e34d0f6d
    
     elif filter == 0x0f:
         filterStr += '\t(fsctl-command '
